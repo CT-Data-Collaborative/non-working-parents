@@ -1,0 +1,86 @@
+Simsbury 2007 under 6 years both parents
+Morris 2005 6 to 17 years one parent
+willington 2008 both parents
+roxbury 2010 one parent
+cornwall 2011 one parent
+sharon 2006 both parents
+
+#Test totals and MOE calculations
+
+MOEagg = +/- sqrt((MOE1)^2 + (MOE2)^2)
+
+nw_parents$Town = "Sharon" 
+nw_parents$Year = "2010"
+nw_parents$Group = "Total living with 2 parents, neither in work force"
+nw_parents$Value = 0
+MOE = 173.9483 check
+
+MOE1 = 123
+MOE2 = 123
+
+nw_parents$Town = "Roxbury" 
+nw_parents$Year = "2011" 
+nw_parents$Group = "Total living with 1 parent, not in work force"
+nw_parents$Value = 6
+MOE = 159.66214 check
+
+MOE1 = 92
+MOE2 = 92  
+MOE3 = 92
+MOE4 = 10
+
+nw_parents$Town = "Willington" 
+nw_parents$Year = "2012"
+nw_parents$Group = "Total living with 2 parents, neither in work force"
+nw_parents$Value = 0
+MOE = 24.04163 check
+
+MOE1 = 17
+MOE2 = 17
+
+nw_parents$Town = "Morris" 
+nw_parents$Year = "2010"
+nw_parents$Group = "Total living with 1 parent, not in work force"
+nw_parents$Value = 0
+MOE = 246 check
+
+MOE1 = 123
+MOE2 = 123
+MOE3 = 123
+MOE4 = 123
+
+nw_parents$Town = "Canaan" 
+nw_parents$Year = "2010"
+nw_parents$Group = "Total living with 1 parent, not in work force"
+nw_parents$Value = 3
+MOE = 213.100915 check
+
+MOE1 = 123
+MOE2 = 5
+MOE3 = 123
+MOE4 = 123
+
+
+nw_parents$Town = "Bethel" 
+nw_parents$Year = "2011"
+nw_parents$Group = "Total living with 1 parent, not in work force"
+nw_parents$Value = 0
+MOE = 184 check
+
+MOE1 = 92
+MOE2 = 92
+MOE3 = 92
+MOE4 = 92
+
+nw_parents$Town = "Ledyard" 
+nw_parents$Year = "2015"
+nw_parents$Group = "Total living with 2 parents, neither in work force"
+nw_parents$Value =2
+MOE = 19.416488 check
+
+MOE1 = 4
+MOE2 = 19
+
+
+
+
