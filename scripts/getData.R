@@ -14,10 +14,10 @@ for (data in acsdata) {
   year <- data@endyear
   
   total_children <- acsSum(data, c(2,15), "Total Children")
-  total_children_2parents <- acsSum(data, c(3,16), "Total living with 2 parents")
-  total_children_2parents_no_work <- acsSum(data, c(7,20), "Total living with 2 parents, neither in work force")
-  total_children_1parent <- acsSum(data, c(8,21), "Total living with 1 parent")
-  total_children_1parent_no_work <- acsSum(data, c(11, 14, 24, 27), "Total living with 1 parent, not in work force")
+  total_children_2parents <- acsSum(data, c(3,16), "Total Living with Two Parents")
+  total_children_2parents_no_work <- acsSum(data, c(7,20), "Total Living with Two Parents, Neither in Work Force")
+  total_children_1parent <- acsSum(data, c(8,21), "Total Living with One Parent")
+  total_children_1parent_no_work <- acsSum(data, c(11, 14, 24, 27), "Total Living with One Parent, Not in Work Force")
   
   #based on the VD0x <- the x is what you want as the range, signifies which columns you want to sum
   # total_under6_living_with_2_parents, total_6to17_living_with_2_parents = "Total living with 2 parents"
