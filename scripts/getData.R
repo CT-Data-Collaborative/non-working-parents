@@ -11,7 +11,8 @@ acsdata <- getACSData(
 
 get_data <- data.table()
 for (data in acsdata) {
-  year <- data@endyear
+  year <- as.numeric(data@endyear)
+  year <- paste(year-4, year, sep="-")
   
   total_children <- acsSum(data, c(2,15), "Total Children")
   total_children_2parents <- acsSum(data, c(3,16), "Total Living with Two Parents")

@@ -83,4 +83,53 @@ MOE2 = 19
 
 
 
+Rates:
 
+MOEp = +/- sqrt(MOEnum^2 - (p^2*MOEden^2)) / Xden
+
+Glastonbury 2010, both parents MOEp = 0.01435137 check
+MOEnum `Total Living with Two Parents, Neither in Work Force Value` = 123.58 check
+under 6 neither MOE = 123
+6to17 neither MOE = 12
+MOEden `Total Children Value` = 329
+Xnum `Total Living with Two Parents, Neither in Work Force Value` = 8
+under 6 neither X = 0
+6to17 neither X = 8
+Xden `Total Children Value` = 8611
+p = xnum/Xden = 0.000929044
+
+sqrt((123.58)^2 - ((0.000929044^2)*(329^2))) / 8611 = 0.01435137
+
+New Fairfield, 2012, one parent MOEp = 0.009785381 check
+MOEnum `Total Living with One Parent, Not in Work Force Value` = 35.028559 check
+under 6 MOE1 = 19
+under 6 MOE2 = 19
+6to17 MOE3 = 19
+6to17 MOE3 = 12
+MOEden `Total Children Value` = 204
+Xnum `Total Living with One Parent, Not in Work Force Value` = 7
+under 6 X1 = 0
+under 6 X2 = 0
+6to17 X3 = 0
+6to17 X3 = 7
+Xden `Total Children Value` = 3579
+p = xnum/Xden = 0.00335289
+
+sqrt((35.028559)^2 - ((0.00335289^2)*(204^2))) / 3579 = 0.009785381
+
+Roxbury, 2015, one parent MOEp = 0.05900676 check
+MOEnum `Total Living with One Parent, Not in Work Force Value` = 25.0599281 check
+under 6 MOE1 = 12
+under 6 MOE2 = 12
+6to17 MOE3 = 12
+6to17 MOE3 = 14
+MOEden `Total Children Value` = 76
+Xnum `Total Living with One Parent, Not in Work Force Value` = 8
+under 6 X1 = 0
+under 6 X2 = 0
+6to17 X3 = 0
+6to17 X3 = 8
+Xden `Total Children Value` = 424
+p = xnum/Xden = 0.0188679
+
+sqrt((25.0599281)^2 - ((0.0188679^2)*(76^2))) / 424 = 0.05900676

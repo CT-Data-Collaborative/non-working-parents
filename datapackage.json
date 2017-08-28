@@ -21,7 +21,7 @@
   }],
   "contributor": [],
   "resources": [{
-    "path": "data/data.csv",
+    "path": "data/non-working-parents_2015.csv",
     "format": "csv",
     "schema": {
       "fields": [{
@@ -37,13 +37,46 @@
           "type": "string",
           "dimension": false
         }, {
+          "name": "Family Type",
+          "type": "string",
+          "dimension": true,
+          "constraints": {
+		        "enum": [
+		          "All", 
+		          "Living with One Parent", 
+		          "Living with Two Parents"
+		        ]
+			    }
+        }, {          
+          "name": "Parent Employment Status",
+          "type": "string",
+          "dimension": true,
+          "constraints": {
+		        "enum": [
+		          "All", 
+		          "Not in Work Force"
+		        ]
+			    }
+        }, {           
           "name": "Measure Type",
           "type": "string",
-          "dimension": true
+          "dimension": true,
+          "constraints": {
+		        "enum": [
+		          "Number", 
+		          "Percent"
+		        ]
+			    }
         }, {
           "name": "Variable",
           "type": "string",
-          "dimension": true
+          "dimension": true,
+          "constraints": {
+		        "enum": [
+		          "Non-Working Parents", 
+		          "Margin of Error"
+		        ]
+			    }
         }, {
           "name": "Value",
           "type": "number",
@@ -52,11 +85,11 @@
       }
     }
   ],
-  "last_modified": "08/24/2017",
+  "last_modified": "08/28/2017",
   "ckan_extras": {
     "full_description": {
       "ckan_name": "Full Description",
-      "value": "Expanded description",
+      "value": "Children are all persons under the age of 18 years, living in families, and related as children by birth, marriage, or adoption to the householder. For children living with one parent, only the resident parent may not be in the labor force, for children living with two parents, both parents are not in the labor force. Rates are calculated as a percentage of total children with non-working parents within a given geography. These data originates from the American Community Survey (ACS) 5-Year estimates, table B23008. The ACS collects these data from a sample of households on a rolling monthly basis. ACS aggregates samples into one-, three-, or five-year periods.",
       "type": "string"
     },
     "suppression": {
@@ -66,17 +99,17 @@
     },
     "technical_notes": {
       "ckan_name": "Technical Notes",
-      "value": "Technical notes for advanced users",
+      "value": "These data provide aggregates and proportions based on total values given per family type. As such, the values are given with Margins of Error calculated from the derived estimates and margins of errors given with the original ACS data.",
       "type": "string"
     },
     "socrata": {
       "ckan_name": "Socrata",
-      "value": "False",,
+      "value": "False",
       "type": "string"
     },
     "socrata_url": {
       "ckan_name": "Socrata Dataset URL",
-      "value": "",,
+      "value": "",
       "type": "string"
     },
     "domain": {
@@ -89,6 +122,16 @@
       "value": "Family Structure",
       "type": "string"
     },
+    "numerator": {
+      "ckan_name": "Numerator",
+      "value": "Children living in families, per parent employment status, per family type.",
+      "type": "string"
+    },
+    "denominator": {
+      "ckan_name": "Denominator",
+      "value": "Total children living with non-working parents.",
+      "type": "string"
+    },    
     "geography": {
       "ckan_name": "Geography",
       "value": "Town",
@@ -102,12 +145,12 @@
     },
     "years_in_catalog": {
       "ckan_name": "Years in Catalog",
-      "value": [],
+      "value": ["2006-2010", "2007-2011", "2008-2012", "2009-2013", "2010-2014", "2011-2015"],
       "type": "array"
     },
     "latest_year": {
       "ckan_name": "Latest Year Available",
-      "value": "2015",
+      "value": "2011-2015",
       "type": "string"
     },
     "disabled_views": {
@@ -123,11 +166,176 @@
         "Percent": "%"
       }
     },
-    "default": {}
+    "expected_number_of_geographies": {
+		  "ckan_name": "Expected Number of Unique Geographies",
+		  "value": 170,
+		  "type": "string"
+		},     
+    "default": {      
+      "ckan_name": "Default",
+			"value": {
+		 		"Town": "Connecticut",
+		 		"Year": ["2011-2015"],
+		 		"Variable": "Non-working Parents",
+		 		"Family Type": ["All", "Living with One Parent", "Living with Two Parents"],
+		 		"Parent Employment Status": "Not in Work Force",
+		 		"Measure Type": "Number"
+			},
+		  	"type": "object"
+    } 
   },
-  "spot_checks": [],
+  "spot_checks": [
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Andover",
+        "Year": "2006-2010",
+        "Variable": "Margin of Error",
+        "Measure Type": "Number",
+        "Family Type": "Living with One Parent", 
+        "Parent Employment Status": "Not in Work Force"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "int",
+        "value": 0
+      } 
+    },     
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Woodstock",
+        "Year": "2007-2011",
+        "Variable": "Margin of Error",
+        "Measure Type": "Percent", 
+        "Family Type": "Living with Two Parents", 
+        "Parent Employment Status": "Not in Work Force"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 0
+      } 
+    },         
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "West Hartford",
+        "Year": "2008-2012",
+        "Variable": "Margin of Error",
+        "Measure Type": "Number", 
+        "Family Type": "All", 
+        "Parent Employment Status": "All"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "int",
+        "value": 0
+      } 
+    },      
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Bethlehem",
+        "Year": "2009-2013",
+        "Variable": "Margin of Error",
+        "Measure Type": "Percent", 
+        "Family Type": "Living with One Parent", 
+        "Parent Employment Status": "Not in Work Force"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 0
+      } 
+    },      
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Berlin",
+        "Year": "2010-2014",
+        "Variable": "Margin of Error",
+        "Measure Type": "Number", 
+        "Family Type": "Living with Two Parents", 
+        "Parent Employment Status": "Not in Work Force"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "int",
+        "value": 0
+      } 
+    }, 
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Union",
+        "Year": "2011-2015",
+        "Variable": "Margin of Error",
+        "Measure Type": "Percent", 
+        "Family Type": "Living with One Parent",
+        "Parent Employment Status": "Not in Work Force"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 0
+      } 
+    },    
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Weston",
+        "Year": "2009-2013",
+        "Variable": "Non-Working Parents",
+        "Measure Type": "Percent", 
+        "Family Type": "Living with One Parent", 
+        "Parent Employment Status": "All"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 0
+      } 
+    },      
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Durham",
+        "Year": "2011-2015",
+        "Variable": "Non-Working Parents",
+        "Measure Type": "Percent", 
+        "Family Type": "Living with Two Parents", 
+        "Parent Employment Status": "Not in Work Force"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 0
+      } 
+    }, 
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Warren",
+        "Year": "2007-2011",
+        "Variable": "Non-Working Parents",
+        "Measure Type": "Number", 
+        "Family Type": "Living with One Parent", 
+        "Parent Employment Status": "Not in Work Force"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "int",
+        "value": 0
+      } 
+    }
+  ],
   "dimension_groups": [
-    {"Measure Type": []},
-    {"Variable": []}
+    {
+      "Variable": ["Non-Working Parents", "Margin of Error"], 
+      "Parent Employment Status": ["All", "All", "All", "All", "All", 
+                                   "Not in Work Force", "Not in Work Force", 
+                                   "Not in Work Force", "Not in Work Force"] 
+    }
   ]
 }

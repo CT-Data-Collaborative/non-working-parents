@@ -56,83 +56,60 @@ calcMOE <- function(x, y, moex, moey) {
 
 # calculate group rates with total denominators,
 # keep MOES, calculating appropriately
-nw_parent_wide_calc2 <- nw_parent_wide %>% 
-  mutate(`Percent Living with One Parent` = round((`Total Living with One Parent Value` / `Total Children Value`)*100,2), 
-         `MOE of Percent Living with One Parent` = round((calcMOE(`Total Living with One Parent Value`, 
-                                                                  `Total Children Value`, 
-                                                                  `Total Living with One Parent MOE`, 
-                                                                  `Total Children MOE`)), 2), 
+nw_parent_wide_calc <- nw_parent_wide %>% 
+  mutate(`% Living with One Parent` = ((`Total Living with One Parent Value` / `Total Children Value`)*100), 
+         `MOE of % Living with One Parent` = (calcMOE(`Total Living with One Parent Value`, 
+                                                      `Total Children Value`, 
+                                                      `Total Living with One Parent MOE`, 
+                                                      `Total Children MOE`)), 
          
-         `Percent Living with Two Parents` = round((`Total Living with Two Parents Value` / `Total Children Value`)*100,2), 
-         `MOE of Percent Living with Two Parents` = round((calcMOE(`Total Living with Two Parents Value`, 
-                                                                   `Total Children Value`, 
-                                                                   `Total Living with Two Parents MOE`, 
-                                                                   `Total Children MOE`)), 2), 
+         `% Living with Two Parents` = ((`Total Living with Two Parents Value` / `Total Children Value`)*100), 
+         `MOE of % Living with Two Parents` = (calcMOE(`Total Living with Two Parents Value`, 
+                                                       `Total Children Value`, 
+                                                       `Total Living with Two Parents MOE`, 
+                                                       `Total Children MOE`)), 
          
-         `Percent Living with One Parent Not in Work Force` = round((`Total Living with One Parent, Not in Work Force Value` / `Total Children Value`)*100,2), 
-         `MOE of Percent Living with One Parent Not in Work Force` = round((calcMOE(`Total Living with One Parent, Not in Work Force Value`, 
-                                                                                    `Total Children Value`, 
-                                                                                    `Total Living with One Parent, Not in Work Force MOE`, 
-                                                                                    `Total Children MOE`)), 2),     
+         `% Living with One Parent No Work` = ((`Total Living with One Parent, Not in Work Force Value` / `Total Children Value`)*100), 
+         `MOE of % Living with One Parent No Work` = (calcMOE(`Total Living with One Parent, Not in Work Force Value`, 
+                                                              `Total Children Value`, 
+                                                              `Total Living with One Parent, Not in Work Force MOE`, 
+                                                              `Total Children MOE`)),     
          
-         `Percent Living with Two Parents Neither in Work Force` = round((`Total Living with Two Parents, Neither in Work Force Value` / `Total Children Value`)*100,2), 
-         `MOE of Percent Living with Two Parents Neither in Work Force` = round((calcMOE(`Total Living with Two Parents, Neither in Work Force Value`, 
-                                                                                         `Total Children Value`, 
-                                                                                         `Total Living with Two Parents, Neither in Work Force MOE`, 
-                                                                                         `Total Children MOE`)), 2))
+         `% Living with Two Parents No Work` = ((`Total Living with Two Parents, Neither in Work Force Value` / `Total Children Value`)*100), 
+         `MOE of % Living with Two Parents No Work` = (calcMOE(`Total Living with Two Parents, Neither in Work Force Value`, 
+                                                               `Total Children Value`, 
+                                                               `Total Living with Two Parents, Neither in Work Force MOE`, 
+                                                               `Total Children MOE`)))
 
 options(scipen=999)
 
 nw_parents_long <- gather(nw_parent_wide_calc, Group, Value, 4:21, factor_key = FALSE)
 
 nw_parents_long$`Measure Type` <- "Number"
-nw_parents_long$`Measure Type`[which(grepl("Percent", nw_parents_long$Group))] <- "Percent"
-
+nw_parents_long$`Measure Type`[which(grepl("%", nw_parents_long$Group))] <- "Percent"
 
 nw_parents_long$Variable <- "Non-Working Parents"
 nw_parents_long$Variable[which(grepl("MOE", nw_parents_long$Group))] <- "Margin of Error"
 
 nw_parents_long$`Family Type` <- "All"
-nw_parents_long$`Family Type`[which(grepl("Living with One Parent", nw_parents_long$Group))] <- "Living with One Parent"
-nw_parents_long$`Family Type`[which(grepl("Living with Two Parents", nw_parents_long$Group))] <- "Living with Two Parents"
+nw_parents_long$`Family Type`[which(grepl("One Parent", nw_parents_long$Group))] <- "Living with One Parent"
+nw_parents_long$`Family Type`[which(grepl("Two Parent", nw_parents_long$Group))] <- "Living with Two Parents"
 
-omit <- c("Total Living with Two Parents Value", "Total Living with Two Parents MOE", "Total Living with One Parent Value", "Total Living with One Parent MOE", 
-          "Percent Living with One Parent", "Percent Living with Two Parents", "MOE of Percent Living with One Parent", "MOE of Percent Living with Two Parents")
-nw_parents_long <- nw_parents_long[!nw_parents_long$Group %in% omit,]
+nw_parents_long$`Parent Employment Status` <- "All"
+nw_parents_long$`Parent Employment Status`[which(grepl("Work", nw_parents_long$Group))] <- "Not in Work Force"
 
-case1 <- nw_parents_long[nw_parents_long$Year == "2015" & nw_parents_long$Town == "Connecticut",]
-case1 <- case1 %>% arrange(`Family Type`, `Measure Type`)
+nw_parents_long$Group <- NULL
 
-nw_parents_long2 <- gather(nw_parent_wide_calc2, Group, Value, 4:21, factor_key = FALSE)
+nw_parents_long$Value <- round(nw_parents_long$Value, 2)
 
-nw_parents_long2$`Measure Type` <- "Number"
-nw_parents_long2$`Measure Type`[which(grepl("Percent", nw_parents_long2$Group))] <- "Percent"
+nw_parents_long <- nw_parents_long %>% 
+  select(Town, FIPS, Year, `Family Type`, `Parent Employment Status`, `Measure Type`, Variable, Value) %>% 
+  arrange(Town, Year, `Measure Type`, Variable, `Family Type`, `Parent Employment Status`)
 
-
-nw_parents_long2$Variable <- "Non-Working Parents"
-nw_parents_long2$Variable[which(grepl("MOE", nw_parents_long2$Group))] <- "Margin of Error"
-
-nw_parents_long2$`Family Type` <- "All"
-nw_parents_long2$`Family Type`[which(grepl("Living with One Parent", nw_parents_long2$Group))] <- "Living with One Parent"
-nw_parents_long2$`Family Type`[which(grepl("Living with Two Parents", nw_parents_long2$Group))] <- "Living with Two Parents"
-
-omit <- c("Total Living with Two Parents Value", "Total Living with Two Parents MOE", "Total Living with One Parent Value", "Total Living with One Parent MOE", 
-          "Percent Living with One Parent", "Percent Living with Two Parents", "MOE of Percent Living with One Parent", "MOE of Percent Living with Two Parents")
-nw_parents_long2 <- nw_parents_long2[!nw_parents_long2$Group %in% omit,]
-
-case2 <- nw_parents_long2[nw_parents_long2$Year == "2015" & nw_parents_long2$Town == "Connecticut",]
-case2 <- case2 %>% arrange(`Family Type`, `Measure Type`)
-
-case1$Method <- "Denom: Sub-Group"
-case2$Method <- "Denom: Total"
-
-both_cases <- rbind(case1, case2)
-
-names(both_cases)[names(both_cases) == "Group"] <- "Description"
-
+# Write to File
 write.table(
-  both_cases,
-  file.path(getwd(), "data", "denominator_case_study.csv"),
+  nw_parents_long,
+  file.path(getwd(), "data", "non-working-parents_2015.csv"),
   sep = ",",
   row.names = F
 )
