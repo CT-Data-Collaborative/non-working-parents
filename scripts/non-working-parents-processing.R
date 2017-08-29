@@ -89,7 +89,7 @@ nw_parents_long$`Measure Type` <- "Number"
 nw_parents_long$`Measure Type`[which(grepl("%", nw_parents_long$Group))] <- "Percent"
 
 nw_parents_long$Variable <- "Non-Working Parents"
-nw_parents_long$Variable[which(grepl("MOE", nw_parents_long$Group))] <- "Margin of Error"
+nw_parents_long$Variable[which(grepl("MOE", nw_parents_long$Group))] <- "Margins of Error"
 
 nw_parents_long$`Family Type` <- "All"
 nw_parents_long$`Family Type`[which(grepl("One Parent", nw_parents_long$Group))] <- "Living with One Parent"

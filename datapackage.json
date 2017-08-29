@@ -74,7 +74,7 @@
           "constraints": {
 		        "enum": [
 		          "Non-Working Parents", 
-		          "Margin of Error"
+		          "Margins of Error"
 		        ]
 			    }
         }, {
@@ -190,7 +190,7 @@
       "filter": {
         "Town": "Andover",
         "Year": "2006-2010",
-        "Variable": "Margin of Error",
+        "Variable": "Margins of Error",
         "Measure Type": "Number",
         "Family Type": "Living with One Parent", 
         "Parent Employment Status": "All"
@@ -206,7 +206,7 @@
       "filter": {
         "Town": "Woodstock",
         "Year": "2007-2011",
-        "Variable": "Margin of Error",
+        "Variable": "Margins of Error",
         "Measure Type": "Percent", 
         "Family Type": "Living with Two Parents", 
         "Parent Employment Status": "Not in Work Force"
@@ -222,7 +222,7 @@
       "filter": {
         "Town": "West Hartford",
         "Year": "2008-2012",
-        "Variable": "Margin of Error",
+        "Variable": "Margins of Error",
         "Measure Type": "Number", 
         "Family Type": "All", 
         "Parent Employment Status": "All"
@@ -238,7 +238,7 @@
       "filter": {
         "Town": "Bethlehem",
         "Year": "2009-2013",
-        "Variable": "Margin of Error",
+        "Variable": "Margins of Error",
         "Measure Type": "Percent", 
         "Family Type": "Living with One Parent", 
         "Parent Employment Status": "Not in Work Force"
@@ -254,7 +254,7 @@
       "filter": {
         "Town": "Berlin",
         "Year": "2010-2014",
-        "Variable": "Margin of Error",
+        "Variable": "Margins of Error",
         "Measure Type": "Number", 
         "Family Type": "Living with Two Parents", 
         "Parent Employment Status": "Not in Work Force"
@@ -270,7 +270,7 @@
       "filter": {
         "Town": "Union",
         "Year": "2011-2015",
-        "Variable": "Margin of Error",
+        "Variable": "Margins of Error",
         "Measure Type": "Percent", 
         "Family Type": "Living with One Parent",
         "Parent Employment Status": "Not in Work Force"
