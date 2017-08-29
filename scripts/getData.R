@@ -14,7 +14,7 @@ for (data in acsdata) {
   year <- as.numeric(data@endyear)
   year <- paste(year-4, year, sep="-")
   
-  total_children <- acsSum(data, c(2,15), "Total Children")
+  total_children <- acsSum(data, 1, "Total Children")
   total_children_2parents <- acsSum(data, c(3,16), "Total Living with Two Parents")
   total_children_2parents_no_work <- acsSum(data, c(7,20), "Total Living with Two Parents, Neither in Work Force")
   total_children_1parent <- acsSum(data, c(8,21), "Total Living with One Parent")
@@ -40,6 +40,8 @@ for (data in acsdata) {
     estimate(total_children_1parent_no_work)
   )
   
+  names(estimates)[names(estimates) == "HD01_VD01.Estimate; Total:"] <- "Total Children"
+  
   estimates <- melt(
     estimates,
     id.vars = c("FIPS", "Year"),
@@ -60,6 +62,9 @@ for (data in acsdata) {
     standard.error(total_children_1parent) * 1.645,
     standard.error(total_children_1parent_no_work) * 1.645
   )
+  
+  names(moes)[names(moes) == "HD01_VD01.Estimate; Total:"] <- "Total Children"
+  
   
   moes <- melt(
     moes,
