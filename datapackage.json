@@ -129,7 +129,7 @@
     },
     "denominator": {
       "ckan_name": "Denominator",
-      "value": "Total children living with non-working parents.",
+      "value": "Total children living in families.",
       "type": "string"
     },    
     "geography": {
