@@ -89,7 +89,7 @@
   "ckan_extras": {
     "full_description": {
       "ckan_name": "Full Description",
-      "value": "Children are all persons under the age of 18 years, living in families, and related as children by birth, marriage, or adoption to the householder. For children living with one parent, only the resident parent may not be in the labor force, for children living with two parents, both parents are not in the labor force. Rates are calculated as a percentage of total children with non-working parents within a given geography. These data originates from the American Community Survey (ACS) 5-Year estimates, table B23008. The ACS collects these data from a sample of households on a rolling monthly basis. ACS aggregates samples into one-, three-, or five-year periods.",
+      "value": "Children are all persons under the age of 18 years, living in families, and related as children by birth, marriage, or adoption to the householder. For children living with one parent, the resident parent is not in the work force, for children living with two parents, both parents are not in the work force. Values include total children, total children per family type, and total children per family type with non-working parents. Rates per family type and per parental employment status are calculated as a percentage of total children within a given geography. These data originate from the American Community Survey (ACS) 5-Year estimates, table B23008. The ACS collects these data from a sample of households on a rolling monthly basis. ACS aggregates samples into one-, three-, or five-year periods.",
       "type": "string"
     },
     "suppression": {
@@ -99,7 +99,7 @@
     },
     "technical_notes": {
       "ckan_name": "Technical Notes",
-      "value": "These data provide aggregates and proportions based on total values given per family type. As such, the values are given with Margins of Error calculated from the derived estimates and margins of errors given with the original ACS data.",
+      "value": "These data present aggregates and proportions based on total values per family type and parental employment status. As such, the values are given with Margins of Error derived from the estimates and margins of error provided with the original ACS data.",
       "type": "string"
     },
     "socrata": {
@@ -124,12 +124,12 @@
     },
     "numerator": {
       "ckan_name": "Numerator",
-      "value": "Children living in families, per parent employment status, per family type.",
+      "value": "Children living with families, per family type, per parental employment status.",
       "type": "string"
     },
     "denominator": {
       "ckan_name": "Denominator",
-      "value": "Total children living in families.",
+      "value": "Total children living with families.",
       "type": "string"
     },    
     "geography": {
