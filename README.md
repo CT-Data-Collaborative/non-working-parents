@@ -1,7 +1,5 @@
 Non-working Parents
 
-[![Build Status](https://travis-ci.org/CT-Data-Collaborative/non-working-parents.svg?branch=master)](https://travis-ci.org/CT-Data-Collaborative/non-working-parents)
-
 Non-working Parents reports the number and percent of children living in both one and two parent families where no parent is in the labor force.
 
 Data Source: U.S. Census ACS 5-Year Estimates Table B23008
