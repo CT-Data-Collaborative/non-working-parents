@@ -15,13 +15,13 @@
     "web": ""
   }],
   "author":[{
-    "name": "Jenna Daly",
-    "email": "jdaly@ctdata.org",
+    "name": "Connecticut Data Collaborative",
+    "email": "info@ctdata.org",
     "web": "http://ctdata.org"
   }],
   "contributor": [],
   "resources": [{
-    "path": "data/non-working-parents_2016.csv",
+    "path": "data/non-working-parents_2017.csv",
     "format": "csv",
     "schema": {
       "fields": [{
@@ -42,28 +42,28 @@
           "dimension": true,
           "constraints": {
 		        "enum": [
-		          "All", 
-		          "Living with One Parent", 
+		          "All",
+		          "Living with One Parent",
 		          "Living with Two Parents"
 		        ]
 			    }
-        }, {          
+        }, {
           "name": "Parent Employment Status",
           "type": "string",
           "dimension": true,
           "constraints": {
 		        "enum": [
-		          "All", 
+		          "All",
 		          "Not in Work Force"
 		        ]
 			    }
-        }, {           
+        }, {
           "name": "Measure Type",
           "type": "string",
           "dimension": true,
           "constraints": {
 		        "enum": [
-		          "Number", 
+		          "Number",
 		          "Percent"
 		        ]
 			    }
@@ -73,7 +73,7 @@
           "dimension": true,
           "constraints": {
 		        "enum": [
-		          "Non-Working Parents", 
+		          "Non-Working Parents",
 		          "Margins of Error"
 		        ]
 			    }
@@ -85,7 +85,7 @@
       }
     }
   ],
-  "last_modified": "12/07/2017",
+  "last_modified": "01/23/2019",
   "ckan_extras": {
     "full_description": {
       "ckan_name": "Full Description",
@@ -131,7 +131,7 @@
       "ckan_name": "Denominator",
       "value": "Total children living with families.",
       "type": "string"
-    },    
+    },
     "geography": {
       "ckan_name": "Geography",
       "value": "Town",
@@ -145,12 +145,12 @@
     },
     "years_in_catalog": {
       "ckan_name": "Years in Catalog",
-      "value": ["2006-2010", "2007-2011", "2008-2012", "2009-2013", "2010-2014", "2011-2015", "2012-2016"],
+      "value": ["2006-2010", "2007-2011", "2008-2012", "2009-2013", "2010-2014", "2011-2015", "2012-2016", "2013-2017"],
       "type": "array"
     },
     "latest_year": {
       "ckan_name": "Latest Year Available",
-      "value": "2012-2016",
+      "value": "2013-2017",
       "type": "string"
     },
     "disabled_views": {
@@ -170,19 +170,19 @@
 		  "ckan_name": "Expected Number of Unique Geographies",
 		  "value": 170,
 		  "type": "string"
-		},     
-    "default": {      
+		},
+    "default": {
       "ckan_name": "Default",
 			"value": {
 		 		"Town": "Connecticut",
-		 		"Year": ["2012-2016"],
-		 		"Variable": "Non-working Parents",
+		 		"Year": ["2013-2017"],
+		 		"Variable": "Non-Working Parents",
 		 		"Family Type": ["All", "Living with One Parent", "Living with Two Parents"],
 		 		"Parent Employment Status": "Not in Work Force",
 		 		"Measure Type": "Number"
 			},
 		  	"type": "object"
-    } 
+    }
   },
   "spot_checks": [
     {
@@ -192,86 +192,54 @@
         "Year": "2006-2010",
         "Variable": "Margins of Error",
         "Measure Type": "Number",
-        "Family Type": "Living with One Parent", 
+        "Family Type": "Living with One Parent",
         "Parent Employment Status": "All"
       },
       "expected": {
         "type": "$match",
         "number type": "float",
         "value": 55.15
-      } 
-    },     
+      }
+    },
     {
       "type": "$lookup",
       "filter": {
         "Town": "Woodstock",
         "Year": "2007-2011",
         "Variable": "Margins of Error",
-        "Measure Type": "Percent", 
-        "Family Type": "Living with Two Parents", 
+        "Measure Type": "Percent",
+        "Family Type": "Living with Two Parents",
         "Parent Employment Status": "Not in Work Force"
       },
       "expected": {
         "type": "$match",
         "number type": "float",
         "value": 0.07
-      } 
-    },         
+      }
+    },
     {
       "type": "$lookup",
       "filter": {
         "Town": "West Hartford",
         "Year": "2008-2012",
         "Variable": "Margins of Error",
-        "Measure Type": "Number", 
-        "Family Type": "All", 
+        "Measure Type": "Number",
+        "Family Type": "All",
         "Parent Employment Status": "All"
       },
       "expected": {
         "type": "$match",
         "number type": "float",
         "value": 415
-      } 
-    },      
+      }
+    },
     {
       "type": "$lookup",
       "filter": {
         "Town": "Bethlehem",
         "Year": "2009-2013",
         "Variable": "Margins of Error",
-        "Measure Type": "Percent", 
-        "Family Type": "Living with One Parent", 
-        "Parent Employment Status": "Not in Work Force"
-      },
-      "expected": {
-        "type": "$match",
-        "number type": "float",
-        "value": 0.16
-      } 
-    },      
-    {
-      "type": "$lookup",
-      "filter": {
-        "Town": "Berlin",
-        "Year": "2010-2014",
-        "Variable": "Margins of Error",
-        "Measure Type": "Number", 
-        "Family Type": "Living with Two Parents", 
-        "Parent Employment Status": "Not in Work Force"
-      },
-      "expected": {
-        "type": "$match",
-        "number type": "float",
-        "value": 31.11
-      } 
-    }, 
-    {
-      "type": "$lookup",
-      "filter": {
-        "Town": "Union",
-        "Year": "2011-2015",
-        "Variable": "Margins of Error",
-        "Measure Type": "Percent", 
+        "Measure Type": "Percent",
         "Family Type": "Living with One Parent",
         "Parent Employment Status": "Not in Work Force"
       },
@@ -279,55 +247,87 @@
         "type": "$match",
         "number type": "float",
         "value": 0.16
-      } 
-    },    
+      }
+    },
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Berlin",
+        "Year": "2010-2014",
+        "Variable": "Margins of Error",
+        "Measure Type": "Number",
+        "Family Type": "Living with Two Parents",
+        "Parent Employment Status": "Not in Work Force"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 31.11
+      }
+    },
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Union",
+        "Year": "2011-2015",
+        "Variable": "Margins of Error",
+        "Measure Type": "Percent",
+        "Family Type": "Living with One Parent",
+        "Parent Employment Status": "Not in Work Force"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 0.16
+      }
+    },
     {
       "type": "$lookup",
       "filter": {
         "Town": "Weston",
         "Year": "2009-2013",
         "Variable": "Non-Working Parents",
-        "Measure Type": "Percent", 
-        "Family Type": "Living with One Parent", 
+        "Measure Type": "Percent",
+        "Family Type": "Living with One Parent",
         "Parent Employment Status": "All"
       },
       "expected": {
         "type": "$match",
         "number type": "float",
         "value": 5.69
-      } 
-    },      
+      }
+    },
     {
       "type": "$lookup",
       "filter": {
         "Town": "Durham",
         "Year": "2011-2015",
         "Variable": "Non-Working Parents",
-        "Measure Type": "Percent", 
-        "Family Type": "Living with Two Parents", 
+        "Measure Type": "Percent",
+        "Family Type": "Living with Two Parents",
         "Parent Employment Status": "Not in Work Force"
       },
       "expected": {
         "type": "$match",
         "number type": "float",
         "value": 0
-      } 
-    }, 
+      }
+    },
     {
       "type": "$lookup",
       "filter": {
         "Town": "Warren",
         "Year": "2007-2011",
         "Variable": "Non-Working Parents",
-        "Measure Type": "Number", 
-        "Family Type": "Living with One Parent", 
+        "Measure Type": "Number",
+        "Family Type": "Living with One Parent",
         "Parent Employment Status": "Not in Work Force"
       },
       "expected": {
         "type": "$match",
         "number type": "int",
         "value": 33
-      } 
+      }
     },
     {
       "type": "$lookup",
@@ -335,23 +335,23 @@
         "Town": "Brookfield",
         "Year": "2012-2016",
         "Variable": "Non-Working Parents",
-        "Measure Type": "Number", 
-        "Family Type": "Living with One Parent", 
+        "Measure Type": "Number",
+        "Family Type": "Living with One Parent",
         "Parent Employment Status": "Not in Work Force"
       },
       "expected": {
         "type": "$match",
         "number type": "int",
         "value": 13
-      } 
+      }
     }
   ],
   "dimension_groups": [
     {
-      "Variable": ["Non-Working Parents", "Margin of Error"], 
-      "Parent Employment Status": ["All", "All", "All", "All", "All", 
-                                   "Not in Work Force", "Not in Work Force", 
-                                   "Not in Work Force", "Not in Work Force"] 
+      "Variable": ["Non-Working Parents", "Margin of Error"],
+      "Parent Employment Status": ["All", "All", "All", "All", "All",
+                                   "Not in Work Force", "Not in Work Force",
+                                   "Not in Work Force", "Not in Work Force"]
     }
   ]
 }

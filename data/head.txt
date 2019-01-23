@@ -1,0 +1,100 @@
+"Town","FIPS","Year","Family Type","Parent Employment Status","Measure Type","Variable","Value"
+"Andover","0901301080","2006-2010","All","All","Number","Margins of Error",87
+"Andover","0901301080","2006-2010","Living with One Parent","All","Number","Margins of Error",55.15
+"Andover","0901301080","2006-2010","Living with One Parent","Not in Work Force","Number","Margins of Error",246
+"Andover","0901301080","2006-2010","Living with Two Parents","All","Number","Margins of Error",114.81
+"Andover","0901301080","2006-2010","Living with Two Parents","Not in Work Force","Number","Margins of Error",173.95
+"Andover","0901301080","2006-2010","All","All","Number","Non-Working Parents",728
+"Andover","0901301080","2006-2010","Living with One Parent","All","Number","Non-Working Parents",86
+"Andover","0901301080","2006-2010","Living with One Parent","Not in Work Force","Number","Non-Working Parents",0
+"Andover","0901301080","2006-2010","Living with Two Parents","All","Number","Non-Working Parents",642
+"Andover","0901301080","2006-2010","Living with Two Parents","Not in Work Force","Number","Non-Working Parents",0
+"Andover","0901301080","2006-2010","Living with One Parent","All","Percent","Margins of Error",0.07
+"Andover","0901301080","2006-2010","Living with One Parent","Not in Work Force","Percent","Margins of Error",0.34
+"Andover","0901301080","2006-2010","Living with Two Parents","All","Percent","Margins of Error",0.12
+"Andover","0901301080","2006-2010","Living with Two Parents","Not in Work Force","Percent","Margins of Error",0.24
+"Andover","0901301080","2006-2010","Living with One Parent","All","Percent","Non-Working Parents",11.81
+"Andover","0901301080","2006-2010","Living with One Parent","Not in Work Force","Percent","Non-Working Parents",0
+"Andover","0901301080","2006-2010","Living with Two Parents","All","Percent","Non-Working Parents",88.19
+"Andover","0901301080","2006-2010","Living with Two Parents","Not in Work Force","Percent","Non-Working Parents",0
+"Andover","0901301080","2007-2011","All","All","Number","Margins of Error",121
+"Andover","0901301080","2007-2011","Living with One Parent","All","Number","Margins of Error",96.93
+"Andover","0901301080","2007-2011","Living with One Parent","Not in Work Force","Number","Margins of Error",184
+"Andover","0901301080","2007-2011","Living with Two Parents","All","Number","Margins of Error",115.43
+"Andover","0901301080","2007-2011","Living with Two Parents","Not in Work Force","Number","Margins of Error",130.11
+"Andover","0901301080","2007-2011","All","All","Number","Non-Working Parents",745
+"Andover","0901301080","2007-2011","Living with One Parent","All","Number","Non-Working Parents",157
+"Andover","0901301080","2007-2011","Living with One Parent","Not in Work Force","Number","Non-Working Parents",0
+"Andover","0901301080","2007-2011","Living with Two Parents","All","Number","Non-Working Parents",588
+"Andover","0901301080","2007-2011","Living with Two Parents","Not in Work Force","Number","Non-Working Parents",0
+"Andover","0901301080","2007-2011","Living with One Parent","All","Percent","Margins of Error",0.13
+"Andover","0901301080","2007-2011","Living with One Parent","Not in Work Force","Percent","Margins of Error",0.25
+"Andover","0901301080","2007-2011","Living with Two Parents","All","Percent","Margins of Error",0.09
+"Andover","0901301080","2007-2011","Living with Two Parents","Not in Work Force","Percent","Margins of Error",0.17
+"Andover","0901301080","2007-2011","Living with One Parent","All","Percent","Non-Working Parents",21.07
+"Andover","0901301080","2007-2011","Living with One Parent","Not in Work Force","Percent","Non-Working Parents",0
+"Andover","0901301080","2007-2011","Living with Two Parents","All","Percent","Non-Working Parents",78.93
+"Andover","0901301080","2007-2011","Living with Two Parents","Not in Work Force","Percent","Non-Working Parents",0
+"Andover","0901301080","2008-2012","All","All","Number","Margins of Error",114
+"Andover","0901301080","2008-2012","Living with One Parent","All","Number","Margins of Error",111
+"Andover","0901301080","2008-2012","Living with One Parent","Not in Work Force","Number","Margins of Error",24
+"Andover","0901301080","2008-2012","Living with Two Parents","All","Number","Margins of Error",118.7
+"Andover","0901301080","2008-2012","Living with Two Parents","Not in Work Force","Number","Margins of Error",16.97
+"Andover","0901301080","2008-2012","All","All","Number","Non-Working Parents",749
+"Andover","0901301080","2008-2012","Living with One Parent","All","Number","Non-Working Parents",202
+"Andover","0901301080","2008-2012","Living with One Parent","Not in Work Force","Number","Non-Working Parents",0
+"Andover","0901301080","2008-2012","Living with Two Parents","All","Number","Non-Working Parents",547
+"Andover","0901301080","2008-2012","Living with Two Parents","Not in Work Force","Number","Non-Working Parents",0
+"Andover","0901301080","2008-2012","Living with One Parent","All","Percent","Margins of Error",0.14
+"Andover","0901301080","2008-2012","Living with One Parent","Not in Work Force","Percent","Margins of Error",0.03
+"Andover","0901301080","2008-2012","Living with Two Parents","All","Percent","Margins of Error",0.11
+"Andover","0901301080","2008-2012","Living with Two Parents","Not in Work Force","Percent","Margins of Error",0.02
+"Andover","0901301080","2008-2012","Living with One Parent","All","Percent","Non-Working Parents",26.97
+"Andover","0901301080","2008-2012","Living with One Parent","Not in Work Force","Percent","Non-Working Parents",0
+"Andover","0901301080","2008-2012","Living with Two Parents","All","Percent","Non-Working Parents",73.03
+"Andover","0901301080","2008-2012","Living with Two Parents","Not in Work Force","Percent","Non-Working Parents",0
+"Andover","0901301080","2009-2013","All","All","Number","Margins of Error",111
+"Andover","0901301080","2009-2013","Living with One Parent","All","Number","Margins of Error",93.47
+"Andover","0901301080","2009-2013","Living with One Parent","Not in Work Force","Number","Margins of Error",24
+"Andover","0901301080","2009-2013","Living with Two Parents","All","Number","Margins of Error",89.64
+"Andover","0901301080","2009-2013","Living with Two Parents","Not in Work Force","Number","Margins of Error",16.97
+"Andover","0901301080","2009-2013","All","All","Number","Non-Working Parents",754
+"Andover","0901301080","2009-2013","Living with One Parent","All","Number","Non-Working Parents",142
+"Andover","0901301080","2009-2013","Living with One Parent","Not in Work Force","Number","Non-Working Parents",0
+"Andover","0901301080","2009-2013","Living with Two Parents","All","Number","Non-Working Parents",612
+"Andover","0901301080","2009-2013","Living with Two Parents","Not in Work Force","Number","Non-Working Parents",0
+"Andover","0901301080","2009-2013","Living with One Parent","All","Percent","Margins of Error",0.12
+"Andover","0901301080","2009-2013","Living with One Parent","Not in Work Force","Percent","Margins of Error",0.03
+"Andover","0901301080","2009-2013","Living with Two Parents","All","Percent","Margins of Error",0.17
+"Andover","0901301080","2009-2013","Living with Two Parents","Not in Work Force","Percent","Margins of Error",0.02
+"Andover","0901301080","2009-2013","Living with One Parent","All","Percent","Non-Working Parents",18.83
+"Andover","0901301080","2009-2013","Living with One Parent","Not in Work Force","Percent","Non-Working Parents",0
+"Andover","0901301080","2009-2013","Living with Two Parents","All","Percent","Non-Working Parents",81.17
+"Andover","0901301080","2009-2013","Living with Two Parents","Not in Work Force","Percent","Non-Working Parents",0
+"Andover","0901301080","2010-2014","All","All","Number","Margins of Error",102
+"Andover","0901301080","2010-2014","Living with One Parent","All","Number","Margins of Error",90.82
+"Andover","0901301080","2010-2014","Living with One Parent","Not in Work Force","Number","Margins of Error",37.32
+"Andover","0901301080","2010-2014","Living with Two Parents","All","Number","Margins of Error",99.02
+"Andover","0901301080","2010-2014","Living with Two Parents","Not in Work Force","Number","Margins of Error",16.97
+"Andover","0901301080","2010-2014","All","All","Number","Non-Working Parents",735
+"Andover","0901301080","2010-2014","Living with One Parent","All","Number","Non-Working Parents",157
+"Andover","0901301080","2010-2014","Living with One Parent","Not in Work Force","Number","Non-Working Parents",22
+"Andover","0901301080","2010-2014","Living with Two Parents","All","Number","Non-Working Parents",578
+"Andover","0901301080","2010-2014","Living with Two Parents","Not in Work Force","Number","Non-Working Parents",0
+"Andover","0901301080","2010-2014","Living with One Parent","All","Percent","Margins of Error",0.12
+"Andover","0901301080","2010-2014","Living with One Parent","Not in Work Force","Percent","Margins of Error",0.05
+"Andover","0901301080","2010-2014","Living with Two Parents","All","Percent","Margins of Error",0.08
+"Andover","0901301080","2010-2014","Living with Two Parents","Not in Work Force","Percent","Margins of Error",0.02
+"Andover","0901301080","2010-2014","Living with One Parent","All","Percent","Non-Working Parents",21.36
+"Andover","0901301080","2010-2014","Living with One Parent","Not in Work Force","Percent","Non-Working Parents",2.99
+"Andover","0901301080","2010-2014","Living with Two Parents","All","Percent","Non-Working Parents",78.64
+"Andover","0901301080","2010-2014","Living with Two Parents","Not in Work Force","Percent","Non-Working Parents",0
+"Andover","0901301080","2011-2015","All","All","Number","Margins of Error",100
+"Andover","0901301080","2011-2015","Living with One Parent","All","Number","Margins of Error",100.57
+"Andover","0901301080","2011-2015","Living with One Parent","Not in Work Force","Number","Margins of Error",25.63
+"Andover","0901301080","2011-2015","Living with Two Parents","All","Number","Margins of Error",82.62
+"Andover","0901301080","2011-2015","Living with Two Parents","Not in Work Force","Number","Margins of Error",16.97
+"Andover","0901301080","2011-2015","All","All","Number","Non-Working Parents",674
+"Andover","0901301080","2011-2015","Living with One Parent","All","Number","Non-Working Parents",139
+"Andover","0901301080","2011-2015","Living with One Parent","Not in Work Force","Number","Non-Working Parents",10
+"Andover","0901301080","2011-2015","Living with Two Parents","All","Number","Non-Working Parents",535
