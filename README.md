@@ -4,6 +4,12 @@ Non-working Parents reports the number and percent of children living in both on
 
 Data Source: U.S. Census ACS 5-Year Estimates Table B23008
 
+### To update
+1. Download B23008 from data.census.gov and put it in `raw/` folder.
+1. Make sure columns are ordered alphabetically. When updating ACS 2018 (in January 2020), the first column was variable _016, not _001. To fix this, in Excel transpose the dataset, sort by first column, and transpose back.
+1. Create Id2 column with a 10-digit code (Excel's RIGHT function, or pandas). Make sure first three columns match older files for consistency.
+1. Run the update script in RStudio.
+
 ## License MIT
 
 ## Getting Setup
